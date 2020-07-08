@@ -5,9 +5,6 @@
 import pytest
 
 
-from chinook_fastapi import chinook_fastapi
-
-
 @pytest.fixture
 def response():
     """Sample pytest fixture.
