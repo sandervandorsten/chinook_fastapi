@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+"""Tests for `chinook_fastapi` package."""
+
+from chinook_fastapi.api import app
+from fastapi.testclient import TestClient
+
+client = TestClient(app)
+
+
+def test_read_root():
+    """Testing init of API"""
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Hello World"}
