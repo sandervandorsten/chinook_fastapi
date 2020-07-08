@@ -5,7 +5,6 @@
 from chinook_fastapi.api import app
 from fastapi.testclient import TestClient
 
-
 client = TestClient(app)
 
 
@@ -25,3 +24,19 @@ def test_read_users():
         assert set(["first_name", "last_name", "email", "gender", "ip_address"]) == set(
             user_data.keys()
         )
+
+
+def test_patch_user(user_id: int = 1):
+    original_ip_address = client.get(f"/users/{str(user_id)}").json()["ip_address"]
+
+    # Change the IP address of a user
+    response = client.patch(f"/users/{str(user_id)}", json={"ip_address": "0.0.0.0"})
+    assert response.status_code == 200
+    assert response.json()["ip_address"] == "0.0.0.0"
+
+    # Change it back to the original value
+    response = client.patch(
+        f"/users/{str(user_id)}", json={"ip_address": original_ip_address}
+    )
+    assert response.status_code == 200
+    assert response.json()["ip_address"] == original_ip_address
