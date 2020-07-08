@@ -10,6 +10,7 @@ with open("README.rst") as readme_file:
 requirements = [
     "fastapi>=0.58.0",
     "uvicorn>=0.11.5",
+    "python-dotenv>=0.14.0"
 ]
 
 setup_requirements = [
