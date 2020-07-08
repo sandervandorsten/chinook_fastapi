@@ -1,0 +1,32 @@
+{
+    "users": {
+        "1": {
+            "email": "jpenddreth0@census.gov",
+            "first_name": "Jeanette",
+            "gender": "Female",
+            "ip_address": "26.58.193.2",
+            "last_name": "Penddreth"
+        },
+        "2": {
+            "email": "gfrediani1@senate.gov",
+            "first_name": "Giavani",
+            "gender": "Male",
+            "ip_address": "229.179.4.212",
+            "last_name": "Frediani"
+        },
+        "3": {
+            "email": "nbea2@imageshack.us",
+            "first_name": "Noell",
+            "gender": "Female",
+            "ip_address": "180.66.162.255",
+            "last_name": "Fish"
+        },
+        "4": {
+            "email": "wvalek3@vk.com",
+            "first_name": "Willard",
+            "gender": "Male",
+            "ip_address": "67.76.188.26",
+            "last_name": "Valek"
+        }
+    }
+}

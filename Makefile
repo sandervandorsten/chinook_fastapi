@@ -33,7 +33,7 @@ clean-build: ## remove build artifacts
 	rm -fr dist/
 	rm -fr .eggs/
 	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
+	find . -name '*.egg' -exec rm -rf {} +
 
 clean-pyc: ## remove Python file artifacts
 	find . -name '*.pyc' -exec rm -f {} +
@@ -64,3 +64,6 @@ coverage: ## check code coverage quickly with the default Python
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+serve-api: ## Serves the API
+	cd chinook_fastapi && uvicorn api:app --reload
