@@ -29,6 +29,54 @@
 - allows some basic requests to a mock database (JSON)
 - verifies input and output using FastAPI.
 
+
+## Installation
+
+```bash
+# Create a virtual Environment
+virtualenv -p $(which python3.7) venv
+source venv/bin/activate
+```
+
+```bash
+# Install packages
+$ make install
+...
+Finished processing dependencies for chinook-fastapi
+```
+
+```bash
+# Serve the API
+$ make serve-api
+cd chinook_fastapi && uvicorn api:app --reload
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [...] using statreload
+INFO:     Started server process [...]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+
+## Usage
+Using a browser (or you favorite API client, I use [Insomnia](https://insomnia.rest/)), go to `localhost:8000/docs` to see the available API methods.
+
+e.g:
+```bash
+curl --request GET \
+  --url http://localhost:8000/users/4 \
+  --header 'content-type: application/json'
+```
+would return
+```json
+{
+  "first_name": "Willard",
+  "last_name": "Valek",
+  "email": "wvalek3@vk.com",
+  "gender": "Male",
+  "ip_address": "67.76.188.26"
+}
+```
+
+
 ## TODO
 - deploy API somewhere
 - deploy docs
